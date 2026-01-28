@@ -1,0 +1,73 @@
+<?php
+header("Content-Type: application/json; charset=utf-8");
+header("X-Powered-By: Express");
+header("Access-Control-Allow-Origin: *");
+header("Vary: Accept-Encoding");
+
+echo '{
+	"products": [{
+		"iap_id": "IAPMPPicklePack",
+		"featured": true,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPCouponPack15",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPDimension5Pack",
+		"featured": true,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPDimension6Pack",
+		"featured": true,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPDimension7Pack",
+		"featured": true,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPCouponPack300",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPPicklePack",
+		"featured": true,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPCouponPack05",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPCouponPack15",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPCouponPack40",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPCouponPack40",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPCouponPack05",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPMPCouponPack125",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPCouponPack125",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPCouponPack300",
+		"featured": false,
+		"onsale": false
+	}, {
+		"iap_id": "IAPSPJuly4thPack",
+		"featured": true,
+		"onsale": false
+	}]
+}';
