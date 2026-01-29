@@ -10,86 +10,113 @@ header("Vary: Accept-Encoding");
 
 require '../../../pocket_f4894h398r8h9w9er8he98he.php';
 
+function pm_error(int $status, string $code) {
+    http_response_code($status);
+    echo json_encode([
+        "error" => [
+            "code" => $code
+        ]
+    ], JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
 $input = file_get_contents('php://input');
-$data = json_decode($input, true);
+$data  = json_decode($input, true);
 
-$session_id = $data['session_id'];
-$request_sent_player_id = $data['player_id'];
+$session_id = $data['session_id'] ?? null;
+$target_player_id = $data['player_id'] ?? null; // the player we are trying to friend
 
-if (empty($session_id)) {
-    die("Not authenticated");
+if (!$session_id) {
+    pm_error(401, "NOT_AUTHENTICATED");
+}
+if (!$target_player_id) {
+    pm_error(400, "MISSING_PLAYER_ID");
 }
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE session_id = ?");
+/** 1) Find the sender by session_id */
+$stmt = $pdo->prepare("SELECT player_id, wins FROM users WHERE session_id = ? LIMIT 1");
 $stmt->execute([$session_id]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$sender = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$user) {
-    die("Not authenticated");
+if (!$sender) {
+    pm_error(401, "NOT_AUTHENTICATED");
 }
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE player_id = ?");
-$stmt->execute([$request_sent_player_id]);
-$other_user = $stmt->fetch(PDO::FETCH_ASSOC);
+$sender_player_id = $sender['player_id'];
+$wins_sender = (int)$sender['wins'];
 
-if (!$other_user) {
-    die("Not authenticated");
+/** 2) Block self friend request */
+if ($sender_player_id === $target_player_id) {
+    pm_error(400, "FRIEND_SELF");
 }
 
-$player_id = $user['player_id'];
-$wins_b = $user['wins'];
-$request_sent_player_id = $other_user['player_id'];
-$wins_a = $other_user['wins'];
+/** 3) Make sure target exists */
+$stmt = $pdo->prepare("SELECT player_id, wins FROM users WHERE player_id = ? LIMIT 1");
+$stmt->execute([$target_player_id]);
+$target = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$target) {
+    pm_error(404, "PLAYER_NOT_FOUND");
+}
+
+$wins_target = (int)$target['wins'];
+
+/** UTC timestamp */
 $date = (new DateTime('now', new DateTimeZone('UTC')))->format('Y-m-d\TH:i:s.v') . 'Z';
 
-/*
-status: 400
-{
-	"error": {
-		"code": "FRIEND_LIMIT_OTHER"
-	}
-}
-
-// already friends and a sent request.
-{
-	"error": {
-		"code": "FRIEND_DUPLICATE"
-	}
-}
-*/
-
-$stmt = $pdo->prepare("SELECT * FROM friend_list WHERE player_id_a = ? AND player_id_b = ?");
-$stmt->execute([$request_sent_player_id, $player_id]);
-$find = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if($find){
-http_response_code(400);
-$error = json_encode([
-    "error" => [
-        "code" => "FRIEND_DUPLICATE"
-    ]
-], JSON_UNESCAPED_SLASHES);
-echo $error;
-}
-if(!$find){
-$stmt_1 = $pdo->prepare("
-INSERT INTO friend_list (player_id_a, player_id_b, pending, direction, created, modified)
-VALUES (?, ?, ?, ?, ?, ?)
+/**
+ * 4) Prevent duplicates BOTH directions:
+ * - sender -> target
+ * - target -> sender
+ *
+ * If any row exists, it means either:
+ * - already friends, or
+ * - pending request exists either direction
+ */
+$stmt = $pdo->prepare("
+    SELECT 1
+    FROM friend_list
+    WHERE (player_id_a = ? AND player_id_b = ?)
+       OR (player_id_a = ? AND player_id_b = ?)
+    LIMIT 1
 ");
-$stmt_1->execute([$request_sent_player_id, $player_id, 'true', 'false', $date, $date]);
+$stmt->execute([$sender_player_id, $target_player_id, $target_player_id, $sender_player_id]);
+$exists = $stmt->fetchColumn();
+
+if ($exists) {
+    pm_error(400, "FRIEND_DUPLICATE");
+}
+
+/**
+ * 5) Insert a pending request.
+ * IMPORTANT: Decide what "direction" means in your schema.
+ * Your original code inserted:
+ *   player_id_a = target
+ *   player_id_b = sender
+ * which is backwards for most systems.
+ *
+ * I’m going to make it logical:
+ *   A = sender, B = target
+ *
+ * If your client expects the old behavior, tell me and I’ll flip it back.
+ */
+$stmt_1 = $pdo->prepare("
+    INSERT INTO friend_list (player_id_a, player_id_b, pending, direction, created, modified)
+    VALUES (?, ?, ?, ?, ?, ?)
+");
+$stmt_1->execute([$sender_player_id, $target_player_id, 'true', 'false', $date, $date]);
 
 $response = json_encode([
-    "player_id_a" => $request_sent_player_id,
-    "player_id_b" => $player_id,
-    "wins_a" => $wins_a,
-    "wins_b" => $wins_b,
-	"pending" => true,
-	"direction" => false,
-	"_created" => $date,
-	"_modified" => $date,
+    "player_id_a" => $sender_player_id,
+    "player_id_b" => $target_player_id,
+    "wins_a" => $wins_sender,
+    "wins_b" => $wins_target,
+    "pending" => true,
+    "direction" => false,
+    "_created" => $date,
+    "_modified" => $date,
 ], JSON_UNESCAPED_SLASHES);
 
 $etag = 'W/"' . md5($response) . '"';
 header("ETag: $etag");
 echo $response;
-}

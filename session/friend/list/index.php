@@ -142,8 +142,8 @@ try {
         p.player_id          AS player_id,
         r.created            AS _created
     FROM friend_list r
-    JOIN users p ON p.player_id = r.player_id_a          -- get info of the receiver
-    WHERE r.player_id_b = :me
+    JOIN users p ON p.player_id = r.player_id_b          -- get info of the receiver
+    WHERE r.player_id_a = :me
       AND r.pending     = 'true'
     ORDER BY r.created DESC
 ");
@@ -159,8 +159,8 @@ $receivedStmt = $pdo->prepare("
         p.player_id          AS player_id,
         r.created            AS _created
     FROM friend_list r
-    JOIN users p ON p.player_id = r.player_id_b          -- get info of the sender
-    WHERE r.player_id_a = :me
+    JOIN users p ON p.player_id = r.player_id_a          -- get info of the sender
+    WHERE r.player_id_b = :me
       AND r.pending     = 'true'
     ORDER BY r.created DESC
 ");

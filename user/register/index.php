@@ -32,24 +32,53 @@ function uuidv4() {
     return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
 }
 
-$username = $data['username'];
-$player_avatar_ids = $data['player_avatar_ids'];
+function generateRecoveryCode(): string {
+    return str_pad((string) random_int(0, 9999999999), 10, '0', STR_PAD_LEFT);
+}
 
+$username = $data['username'] ?? null;
+
+if (!$username) {
+    http_response_code(400);
+    echo json_encode([
+        "error" => [
+            "code" => "USERNAME_MISSING"
+        ]
+    ]);
+    exit;
+}
+
+// Check if username exists
+$stmt = $pdo->prepare("SELECT 1 FROM users WHERE username = ?");
+$stmt->execute([$username]);
+$userExists = $stmt->fetchColumn();
+
+if ($userExists) {
+    http_response_code(400); // Conflict
+    echo json_encode([
+        "error" => [
+            "code" => "USERNAME_DUPLICATE"
+        ]
+    ]);
+    exit;
+}
+
+$player_avatar_ids = $data['player_avatar_ids'];
+$avatar = $data['player_avatar_ids'][0];
 $avatarJson = json_encode($player_avatar_ids);
+$recover_code = generateRecoveryCode();
 $secret = uuidv4();
 $player_id = uuidv4();
 $owned_morty_id = uuidv4();
 $owned_morty_idJson = json_encode([$owned_morty_id]);
 
 do {
-    try {
-        $secret = uuidv4();
-		
+    try {	
         $stmt_1 = $pdo->prepare("
-            INSERT INTO users (secret, player_id, username, player_avatar_id, level, xp, streak, active_deck_id, decks_owned, tags, xp_lower, xp_upper)
+            INSERT INTO users (recover_code, secret, player_id, username, player_avatar_id, level, xp, streak, active_deck_id, decks_owned, tags, xp_lower, xp_upper)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
-		$stmt_1->execute([$secret, $player_id, $username, $avatarJson, '1', '27', '0', '0', '3', '[]', '27', '64']);
+		$stmt_1->execute([$recover_code, $secret, $player_id, $username, $avatar, '1', '27', '0', '0', '3', '[]', '27', '64']);
 		
 		
 		$stmt_2 = $pdo->prepare("
