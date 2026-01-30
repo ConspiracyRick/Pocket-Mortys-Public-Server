@@ -58,7 +58,8 @@ function base64url_encode($data) {
     return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
 }
 
-$noshare = "seepageorgelickhackpooploopyourstours";
+//$noshare = "seepageorgelickhackpooploopyourstours";
+$noshare = rtrim(strtr(base64_encode(random_bytes(32)), '+/', '-_'), '=');
 
 $header = [
     "alg" => "HS256",
@@ -68,12 +69,12 @@ $header = [
 $payload = [
     "player_id" => $player_id,
     "username"  => $username,
-	"level"  => $level,
+	"level"  => (int)$level,
 	"tags"  => $tags,
 	"session_id"  => $session_id,
 	"ping_url"  => $ping_url,
-    "iat"       => $iat,
-    "exp"       => $exp
+    "iat"       => (int)$iat,
+    "exp"       => (int)$exp
 ];
 
 $base64Header  = base64url_encode(json_encode($header));

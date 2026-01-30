@@ -1,0 +1,615 @@
+<?php
+header("Content-Type: application/json; charset=utf-8");
+header("X-Powered-By: Express");
+header("Access-Control-Allow-Origin: *");
+header("Vary: Accept-Encoding");
+
+echo '{
+	"results": [{
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 2,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemPlutonicRock"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemHalzinger"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 2,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 201,
+		"reward_bracket_end": 300,
+		"base_quantity": 100,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemFullRecover"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemPlutonicRock"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemGreatSerum"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 301,
+		"reward_bracket_end": 500,
+		"base_quantity": 50,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 4,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemFullRecover"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemHalzinger"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 101,
+		"reward_bracket_end": 200,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 301,
+		"reward_bracket_end": 500,
+		"base_quantity": 50,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 7,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemGreatSerum"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 11,
+		"reward_bracket_end": 100,
+		"base_quantity": 1,
+		"base_type": "COUPON",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 101,
+		"reward_bracket_end": 200,
+		"base_quantity": 133,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 301,
+		"reward_bracket_end": 500,
+		"base_quantity": 50,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemGreatSerum"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 1,
+		"base_type": "MORTY",
+		"base_parameters": {
+			"ids": ["MortyNoDinos"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 5,
+		"base_type": "COUPON",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 101,
+		"reward_bracket_end": 200,
+		"base_quantity": 134,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 501,
+		"reward_bracket_end": 750,
+		"base_quantity": 37,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 2000,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1450,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 1050,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 11,
+		"reward_bracket_end": 100,
+		"base_quantity": 1,
+		"base_type": "MORTY",
+		"base_parameters": {
+			"ids": ["MortyNoDinos"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 201,
+		"reward_bracket_end": 300,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 1,
+		"base_type": "MORTY",
+		"base_parameters": {
+			"ids": ["MortyNoDinos"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 2,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemGreatSerum"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemPlutonicRock"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemPlutonicRock"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 101,
+		"reward_bracket_end": 200,
+		"base_quantity": 133,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 301,
+		"reward_bracket_end": 500,
+		"base_quantity": 50,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1,
+		"base_type": "MORTY",
+		"base_parameters": {
+			"ids": ["MortyNoDinos"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 10,
+		"base_type": "COUPON",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 750,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 201,
+		"reward_bracket_end": 300,
+		"base_quantity": 100,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 501,
+		"reward_bracket_end": 750,
+		"base_quantity": 37,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 2,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemHalzinger"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemHalzinger"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": null,
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 4,
+		"reward_bracket_end": 10,
+		"base_quantity": 1,
+		"base_type": "MORTY",
+		"base_parameters": {
+			"ids": ["MortyNoDinos"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedAttack"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 11,
+		"reward_bracket_end": 100,
+		"base_quantity": 1,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 501,
+		"reward_bracket_end": 750,
+		"base_quantity": 39,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 1,
+		"reward_bracket_end": 1,
+		"base_quantity": 35,
+		"base_type": "COUPON",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 2,
+		"reward_bracket_end": 2,
+		"base_quantity": 20,
+		"base_type": "COUPON",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "COUPON",
+		"bonus_parameters": null
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 3,
+		"reward_bracket_end": 3,
+		"base_quantity": 3,
+		"base_type": "ITEM",
+		"base_parameters": {
+			"ids": ["ItemMortyChip"]
+		},
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 11,
+		"reward_bracket_end": 100,
+		"base_quantity": 550,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 201,
+		"reward_bracket_end": 300,
+		"base_quantity": 100,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedSpeed"]
+		}
+	}, {
+		"raid_event_id": "RaidBossKillerAsteroid_2025",
+		"reward_bracket_start": 501,
+		"reward_bracket_end": 750,
+		"base_quantity": 37,
+		"base_type": "COIN",
+		"base_parameters": null,
+		"bonus_quantity": 1,
+		"bonus_type": "ITEM",
+		"bonus_parameters": {
+			"ids": ["ItemMegaSeedDefence"]
+		}
+	}]
+}';

@@ -8,13 +8,21 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 $session_id = $data['session_id'];
-$player_avatar_ids = $data['player_avatar_ids'];
+$item_id = $data['item_id'];
 
-require '../../../pocket_f4894h398r8h9w9er8he98he.php';
+require '../../pocket_f4894h398r8h9w9er8he98he.php';
 
 // output the response
 $response = json_encode([
-    "success" => true
+    "coins" => 3205915,
+    "coupons" => 1,
+    "result" => [
+        "type" => "ITEM",
+        "item_id" => $item_id,
+        "quantity" => 1,
+        "amount_received" => 1,
+        "amount" => 1
+    ]
 ], JSON_UNESCAPED_SLASHES);
 echo $response;
 exit;

@@ -8,13 +8,12 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 $session_id = $data['session_id'];
-$player_avatar_ids = $data['player_avatar_ids'];
-
-require '../../../pocket_f4894h398r8h9w9er8he98he.php';
+$emote = $data['emote'];
 
 // output the response
-$response = json_encode([
-    "success" => true
-], JSON_UNESCAPED_SLASHES);
+echo json_encode(
+    ["success" => true],
+    JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
+);
 echo $response;
 exit;

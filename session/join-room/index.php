@@ -1,214 +1,187 @@
 <?php
-header("Content-Type: application/json; charset=utf-8");
-header("X-Powered-By: Express");
-header("Access-Control-Allow-Origin: *");
-header("Vary: Accept-Encoding");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
-$response = json_encode([
-    "room_id" => "76092cc3-d968-4d2d-8c54-98ed0817bc5a",
-    "room_udp_host" => "18.117.91.104",
-    "room_udp_port" => "13001",
-    "world_id" => "1",
-    "zone_id" => "[13-15]",
-    "incentive" => [
-        "incentive_id" => "NPCAd",
-        "rewards" => [
-            [
-                "type" => "ITEM",
-                "amount" => 1,
-                "item_id" => "ItemSerum",
-                "rarity" => 100
-            ],
-            [
-                "type" => "ITEM",
-                "amount" => 1,
-                "item_id" => "ItemParalysisCure",
-                "rarity" => 75
-            ],
-            [
-                "type" => "COIN",
-                "amount" => 200
-            ]
-        ],
-        "token" => "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXdhcmRzIjpbeyJ0eXBlIjoiSVRFTSIsImFtb3VudCI6MSwiaXRlbV9pZCI6Ikl0ZW1TZXJ1bSIsInJhcml0eSI6MTAwfSx7InR5cGUiOiJJVEVNIiwiYW1vdW50IjoxLCJpdGVtX2lkIjoiSXRlbVBhcmFseXNpc0N1cmUiLCJyYXJpdHkiOjc1fSx7InR5cGUiOiJDT0lOIiwiYW1vdW50IjoyMDB9XSwiaWF0IjoxNzU5ODIzMDA3fQ.kiAPiIbS5UUlaBa1fN-HmaPtIvyiii2_NGKhio223Pw"
-    ],
-    "users" => [
-        [
-            "player_id" => "b8e6e279-6deb-4163-9e8d-8b5c523d6056",
-            "username" => "Butt_Tickle",
-            "player_avatar_id" => "AvatarSleepyGarry",
-            "level" => 5,
-            "owned_morties" => [
-                [
-                    "owned_morty_id" => "e1d9f66e-aa9d-11ef-880a-a33f715c2e3c",
-                    "morty_id" => "MortyTicketsPlease",
-                    "hp" => 78,
-                    "variant" => "Normal",
-                    "is_locked" => false,
-                    "is_trading_locked" => true,
-                    "fight_pit_id" => "daadd158-cdca-11ef-aa79-f3d2027803c4"
-                ],
-                [
-                    "owned_morty_id" => "79f21352-4f75-11ef-b552-fff1253e757b",
-                    "morty_id" => "MortyGlockenspiel",
-                    "hp" => 434,
-                    "variant" => "Normal",
-                    "is_locked" => false,
-                    "is_trading_locked" => true,
-                    "fight_pit_id" => "daadd158-cdca-11ef-aa79-f3d2027803c4"
-                ],
-                // ... other morties for this user ...
-            ],
-            "state" => "WORLD"
-        ],
-        [
-            "player_id" => "e8ea59de-9c66-40fc-a39e-72bb3f321f63",
-            "username" => "dark_bulter",
-            "player_avatar_id" => "AvatarRickDefault",
-            "level" => 5,
-            "owned_morties" => [
-                [
-                    "owned_morty_id" => "f17576f8-a32f-11f0-90da-1f2d78901606",
-                    "morty_id" => "MortyAndroid",
-                    "hp" => 38,
-                    "variant" => "Normal",
-                    "is_locked" => false,
-                    "is_trading_locked" => true,
-                    "fight_pit_id" => "dabe5afa-cdca-11ef-ba3c-9fb7b3b33be2"
-                ],
-                // ... other morties ...
-            ],
-            "state" => "OCCUPIED"
-        ],
-        [
-            "player_id" => "f72a947d-685e-4eab-9fe5-8e07ff55b186",
-            "username" => "ibkbjjnkin",
-            "player_avatar_id" => "AvatarRickDefault",
-            "level" => 5,
-            "owned_morties" => [
-                [
-                    "owned_morty_id" => "9f3852a3-5591-41d8-9e9a-17a3bebcdf09",
-                    "morty_id" => "MortyDefault",
-                    "hp" => 29,
-                    "variant" => "Normal",
-                    "is_locked" => false,
-                    "is_trading_locked" => false,
-                    "fight_pit_id" => null
-                ],
-                // ... other morties ...
-            ],
-            "state" => "WORLD"
-        ]
-    ],
-    "pickups" => [
-        [
-            "contents" => [
-                [
-                    "type" => "ITEM",
-                    "amount" => 1,
-                    "item_id" => "ItemCable",
-                    "rarity" => 100
-                ]
-            ],
-            "placement" => [42, 64],
-            "pickup_id" => "181875a0-a351-11f0-b3db-ed7f54f6c24a"
-        ],
-        [
-            "contents" => [
-                [
-                    "type" => "ITEM",
-                    "amount" => 1,
-                    "item_id" => "ItemPlutonicRock",
-                    "rarity" => 100
-                ],
-                [
-                    "type" => "ITEM",
-                    "amount" => 1,
-                    "item_id" => "ItemSerum",
-                    "rarity" => 100
-                ],
-                [
-                    "type" => "COIN",
-                    "amount" => 196
-                ]
-            ],
-            "placement" => [25, 87],
-            "pickup_id" => "1e5cc4c0-a351-11f0-98f6-417ce7b1d5b6"
-        ],
-        [
-            "contents" => [
-                [
-                    "type" => "ITEM",
-                    "amount" => 1,
-                    "item_id" => "ItemBacteriaCell",
-                    "rarity" => 100
-                ]
-            ],
-            "placement" => [8, 57],
-            "pickup_id" => "c79690d0-a350-11f0-bcc4-3f3cb97bfd4b"
-        ]
-    ],
-    "wild_morties" => [
-        [
-            "morty_id" => "MortyPrisoner",
-            "placement" => [32, 72],
-            "state" => "WORLD",
-            "division" => 1,
-            "variant" => "Normal",
-            "shiny_if_potion" => false,
-            "_created" => "2025-10-07T05:40:35.168Z",
-            "_updated" => "2025-10-07T05:40:35.168Z",
-            "wild_morty_id" => "258c6e00-a340-11f0-affc-7d02f0f2cb3b"
-        ],
-        [
-            "morty_id" => "MortySurvivor",
-            "placement" => [49, 84],
-            "state" => "WORLD",
-            "division" => 1,
-            "variant" => "Shiny",
-            "shiny_if_potion" => false,
-            "_created" => "2025-10-07T06:34:21.601Z",
-            "_updated" => "2025-10-07T06:34:21.601Z",
-            "wild_morty_id" => "a8a70910-a347-11f0-845f-679ff830f02d"
-        ],
-        // ... other wild morties ...
-    ],
-    "bots" => [
-        [
-            "username" => "Ataraxy",
-            "player_avatar_id" => "AvatarTeacherRick",
-            "state" => "WORLD",
-            "level" => 5,
-            "owned_morties" => [
-                [
-                    "morty_id" => "MortyPoorHouse",
-                    "variant" => "Normal",
-                    "hp" => 1,
-                    "owned_morty_id" => "80700000-0000-0000-0000-000000000000"
-                ],
-                // ... other bot morties ...
-            ],
-            "zone" => [
-                "player" => [5, 5],
-                "bots" => [
-                    "count" => 8,
-                    "morty_count" => [
-                        "min" => 3,
-                        "max" => 4
-                    ],
-                    "morty_hp_handicap" => [
-                        "min" => 0.4,
-                        "max" => 0.6
-                    ]
-                ],
-                "zone_id" => "[5-5]"
-            ],
-            "streak" => 0,
-            "_created" => "2025-10-07T07:32:27.557Z",
-            "_updated" => "2025-10-07T07:32:27.557Z",
-            "bot_id" => "c671b550-a34f-11f0-bcc4-3f3cb97bfd4b"
-        ],
-        // ... other bots (Ataraxy, Barbirdation, EasementJustice, etc.) ...
-    ]
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-echo $response;
+header("Content-Type: application/json; charset=utf-8");
+
+require __DIR__ . "/../../pocket_f4894h398r8h9w9er8he98he.php";
+require_once __DIR__ . "/../../lib/events.php";
+require_once __DIR__ . "/../../lib/room_entities.php";
+require_once __DIR__ . "/../../lib/auth.php";
+
+$body = json_decode(file_get_contents("php://input"), true) ?: [];
+$session_id = $body["session_id"] ?? "";
+$world_id   = (string)($body["world_id"] ?? "");
+
+if ($session_id === "" || $world_id === "") {
+  http_response_code(400);
+  echo json_encode(["error" => "Missing session_id or world_id"], JSON_UNESCAPED_SLASHES);
+  exit;
+}
+
+// --- Auth: session_id -> user ---
+$stmt = $pdo->prepare("
+  SELECT player_id, username, player_avatar_id, level
+  FROM users
+  WHERE session_id = ?
+  LIMIT 1
+");
+$stmt->execute([$session_id]);
+$me = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$me) {
+  http_response_code(401);
+  echo json_encode(["error" => "Not authenticated"], JSON_UNESCAPED_SLASHES);
+  exit;
+}
+
+$my_player_id = (string)$me["player_id"];
+
+// --- Choose room/zone (your logic here later) ---
+$room_id = "76092cc3-d968-4d2d-8c54-98ed0817bc5a";
+$zone_id = "[13-15]";
+
+// ✅ Cursor baseline FIRST (so SSE will stream everything that happens after join-room is called)
+$maxBefore = $pdo->prepare("SELECT COALESCE(MAX(id), 0) FROM event_queue WHERE room_id = ?");
+$maxBefore->execute([$room_id]);
+$baseline_event_id = (int)$maxBefore->fetchColumn();
+
+$cur = $pdo->prepare("
+  INSERT INTO room_stream_cursor (player_id, room_id, last_event_id)
+  VALUES (?, ?, ?)
+  ON DUPLICATE KEY UPDATE last_event_id = VALUES(last_event_id), updated_at = NOW()
+");
+$cur->execute([$my_player_id, $room_id, $baseline_event_id]);
+
+// --- Upsert presence ---
+$up = $pdo->prepare("
+  INSERT INTO room_presence (player_id, room_id, username, avatar_id, level, state)
+  VALUES (?, ?, ?, ?, ?, 'WORLD')
+  ON DUPLICATE KEY UPDATE
+    room_id = VALUES(room_id),
+    username = VALUES(username),
+    avatar_id = VALUES(avatar_id),
+    level = VALUES(level),
+    state = 'WORLD',
+    last_seen = NOW()
+");
+$up->execute([
+  $my_player_id,
+  $room_id,
+  $me['username'],
+  $me['player_avatar_id'],
+  (int)$me['level'],
+]);
+
+// --- Snapshot: get all users currently in this room ---
+$pres = $pdo->prepare("
+  SELECT player_id, username, avatar_id, level, state
+  FROM room_presence
+  WHERE room_id = ?
+  ORDER BY last_seen DESC
+");
+$pres->execute([$room_id]);
+$present_users = $pres->fetchAll(PDO::FETCH_ASSOC);
+
+// --- Incentive (safe default) ---
+$incentive = [
+  "incentive_id" => "NPCAd",
+  "rewards" => [
+    ["type" => "ITEM", "amount" => 1, "item_id" => "ItemSerum", "rarity" => 100],
+    ["type" => "ITEM", "amount" => 1, "item_id" => "ItemParalysisCure", "rarity" => 75],
+    ["type" => "COIN", "amount" => 200],
+  ],
+  "token" => ""
+];
+
+// --- Build morties map for everyone in room ---
+$player_ids = array_values(array_unique(array_map(fn($r) => (string)$r["player_id"], $present_users)));
+$morties_by_player = [];
+
+if (count($player_ids) > 0) {
+  $placeholders = implode(",", array_fill(0, count($player_ids), "?"));
+  $mstmt = $pdo->prepare("
+    SELECT
+      player_id,
+      owned_morty_id,
+      morty_id,
+      hp,
+      variant,
+      is_locked,
+      is_trading_locked,
+      fight_pit_id
+    FROM owned_morties
+    WHERE player_id IN ($placeholders)
+    ORDER BY id ASC
+  ");
+  $mstmt->execute($player_ids);
+
+  while ($m = $mstmt->fetch(PDO::FETCH_ASSOC)) {
+    $pid = (string)$m["player_id"];
+    if (!isset($morties_by_player[$pid])) $morties_by_player[$pid] = [];
+
+    $is_locked = ($m["is_locked"] === "true" || $m["is_locked"] === "1" || $m["is_locked"] === 1);
+    $is_trading_locked = ($m["is_trading_locked"] === "true" || $m["is_trading_locked"] === "1" || $m["is_trading_locked"] === 1);
+
+    $morties_by_player[$pid][] = [
+      "owned_morty_id" => (string)$m["owned_morty_id"],
+      "morty_id" => (string)$m["morty_id"],
+      "hp" => (int)$m["hp"],
+      "variant" => $m["variant"] ?: "Normal",
+      "is_locked" => (bool)$is_locked,
+      "is_trading_locked" => (bool)$is_trading_locked,
+      "fight_pit_id" => ($m["fight_pit_id"] === null || $m["fight_pit_id"] === "null") ? null : (string)$m["fight_pit_id"]
+    ];
+  }
+}
+
+// --- Assemble users array ---
+$users = [];
+foreach ($present_users as $u) {
+  $pid = (string)$u["player_id"];
+  $users[] = [
+    "player_id" => $pid,
+    "username" => (string)$u["username"],
+    "player_avatar_id" => (string)$u["avatar_id"],
+    "level" => (int)$u["level"],
+    "owned_morties" => $morties_by_player[$pid] ?? [],
+    "state" => ($u["state"] ?: "WORLD")
+  ];
+}
+
+// --- Ensure room has initial entities (this may publish events) ---
+if (!room_is_initialized($pdo, $room_id)) {
+  seed_room_entities($pdo, $room_id, $world_id, $zone_id);
+}
+
+// Build snapshot arrays from event history (for join-room response)
+$entities = build_room_snapshot_from_events($pdo, $room_id);
+
+// ✅ NOW announce join to everyone else (SSE filters self on their own connection)
+publish_event($pdo, $room_id, "room:user-added", [
+  "player_id" => $my_player_id,
+  "username" => (string)$me["username"],
+  "player_avatar_id" => (string)$me["player_avatar_id"],
+  "level" => (int)$me["level"],
+  "owned_morties" => $morties_by_player[$my_player_id] ?? [],
+  "state" => "WORLD"
+]);
+
+$response = [
+  "room_id" => $room_id,
+  "room_udp_host" => "18.117.91.104",
+  "room_udp_port" => "13001",
+  "world_id" => $world_id,
+  "zone_id" => $zone_id,
+  "incentive" => $incentive,
+  "users" => $users,
+  "pickups" => $entities["pickups"] ?? [],
+  "wild_morties" => $entities["wild_morties"] ?? [],
+  "bots" => $entities["bots"] ?? [],
+
+  // debug
+  "baseline_event_id" => $baseline_event_id
+];
+
+echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);

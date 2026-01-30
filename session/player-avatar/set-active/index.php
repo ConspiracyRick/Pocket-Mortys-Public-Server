@@ -8,7 +8,7 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 $session_id = $data['session_id'];
-$player_avatar_ids = $data['player_avatar_ids'];
+$player_avatar_id = $data['player_avatar_id'];
 
 require '../../../pocket_f4894h398r8h9w9er8he98he.php';
 

@@ -2,7 +2,7 @@ RewriteEngine On
 
 #Options -Indexes
 
-RewriteRule ^ccpa-link-redirector/?$ https://support.conspiracyrick.com/ [R=301,L]
+#RewriteRule ^ccpa-link-redirector/?$ https://support.conspiracyrick.com/ [R=301,L]
 
 # Disable Apache's automatic slash redirect for this path
 DirectorySlash Off
@@ -10,6 +10,70 @@ DirectorySlash Off
 RewriteCond %{HTTP:X-Forwarded-Proto} =https
 # debug
 #RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Internally rewrite /session/emote/room to /session/emote/room/
+RewriteCond %{REQUEST_URI} ^/session/emote/room$
+RewriteRule ^session/emote/room$ /session/emote/room/ [L]
+
+# Internally rewrite /shard/scores to /shard/scores/
+RewriteCond %{REQUEST_URI} ^/shard/scores$
+RewriteRule ^shard/scores$ /shard/scores/ [L]
+
+# Internally rewrite /event/brackets to /event/brackets/
+RewriteCond %{REQUEST_URI} ^/event/brackets$
+RewriteRule ^event/brackets$ /event/brackets/ [L]
+
+# Internally rewrite /session/player-avatar/set-active to /session/player-avatar/set-active/
+RewriteCond %{REQUEST_URI} ^/session/player-avatar/set-active$
+RewriteRule ^session/player-avatar/set-active$ /session/player-avatar/set-active/ [L]
+
+# Internally rewrite /session/player-avatar/buy to /session/player-avatar/buy/
+RewriteCond %{REQUEST_URI} ^/session/player-avatar/buy$
+RewriteRule ^session/player-avatar/buy$ /session/player-avatar/buy/ [L]
+
+# Internally rewrite /session/buy-item to /session/buy-item/
+RewriteCond %{REQUEST_URI} ^/session/buy-item$
+RewriteRule ^session/buy-item$ /session/buy-item/ [L]
+
+# Internally rewrite /event/pendingRewards to /event/pendingRewards/
+RewriteCond %{REQUEST_URI} ^/event/pendingRewards$
+RewriteRule ^event/pendingRewards$ /event/pendingRewards/ [L]
+
+# Internally rewrite /event/check to /event/check/
+RewriteCond %{REQUEST_URI} ^/event/check$
+RewriteRule ^event/check$ /event/check/ [L]
+
+# Internally rewrite /lte/fyre/events/list to /lte/fyre/events/list/
+RewriteCond %{REQUEST_URI} ^/lte/fyre/events/list$
+RewriteRule ^lte/fyre/events/list$ /lte/fyre/events/list/ [L]
+
+# Internally rewrite /moving-mortys/events/list to /moving-mortys/events/list/
+RewriteCond %{REQUEST_URI} ^/moving-mortys/events/list$
+RewriteRule ^moving-mortys/events/list$ /moving-mortys/events/list/ [L]
+
+# Internally rewrite /arena/battle/bot to /arena/battle/bot/
+RewriteCond %{REQUEST_URI} ^/arena/battle/bot$
+RewriteRule ^arena/battle/bot$ /arena/battle/bot/ [L]
+
+# Internally rewrite /arena/energy/fetch to /arena/energy/fetch/
+RewriteCond %{REQUEST_URI} ^/arena/energy/fetch$
+RewriteRule ^arena/energy/fetch$ /arena/energy/fetch/ [L]
+
+# Internally rewrite /arena/scores/list to /arena/scores/list/
+RewriteCond %{REQUEST_URI} ^/arena/scores/list$
+RewriteRule ^arena/scores/list$ /arena/scores/list/ [L]
+
+# Internally rewrite /arena/rewards/list to /arena/rewards/list/
+RewriteCond %{REQUEST_URI} ^/arena/rewards/list$
+RewriteRule ^arena/rewards/list$ /arena/rewards/list/ [L]
+
+# Internally rewrite /arena/rewards/pending/list to /arena/rewards/pending/list/
+RewriteCond %{REQUEST_URI} ^/arena/rewards/pending/list$
+RewriteRule ^arena/rewards/pending/list$ /arena/rewards/pending/list/ [L]
+
+# Internally rewrite /arena/events/list to /arena/events/list/
+RewriteCond %{REQUEST_URI} ^/arena/events/list$
+RewriteRule ^arena/events/list$ /arena/events/list/ [L]
 
 # Internally rewrite /session/challenge/list to /session/challenge/list/
 RewriteCond %{REQUEST_URI} ^/session/challenge/list$
