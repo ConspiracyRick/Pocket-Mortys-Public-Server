@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:host=localhost;port=3306;dbname=server_pocket_mortys;charset=utf8mb4";
+$dsn = "mysql:host=localhost;port=3306;dbname=pocket_mortys;charset=utf8mb4";
 
 $pdo = new PDO($dsn, "pocketmortys", "yourpassword", [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
