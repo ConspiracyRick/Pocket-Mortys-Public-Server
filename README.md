@@ -1,88 +1,86 @@
-Pocket Mortys – Public Server
+<p align="center">
+  <h1 align="center">Pocket Mortys – Public Server</h1>
+  <p align="center">
+    Community-maintained backend server for Pocket Mortys
+  </p>
+</p>
 
-An independent, community-maintained server implementation for Pocket Mortys, designed to preserve online functionality and enable continued gameplay through a custom backend infrastructure.
+<p align="center">
+  <a href="https://github.com/ConspiracyRick/Pocket-Mortys-Public-Server/releases">
+    <img src="https://img.shields.io/github/v/release/ConspiracyRick/Pocket-Mortys-Public-Server?style=flat-square" />
+  </a>
+  <img src="https://img.shields.io/badge/status-active%20development-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/php-8.x-777bb4?style=flat-square" />
+  <img src="https://img.shields.io/badge/license-unofficial-lightgrey?style=flat-square" />
+</p>
 
-This repository contains the server-side components required to support client authentication, player data persistence, and core gameplay interactions.
+---
 
-Overview
+## Overview
 
-The Pocket Mortys Public Server provides a replacement backend for the Pocket Mortys mobile application. It aims to replicate original server behavior as accurately as possible while remaining modular, maintainable, and extensible.
+An independent, community-maintained server implementation for **Pocket Mortys**, designed to preserve online functionality and enable continued gameplay through a custom backend infrastructure.
 
-The project focuses on long-term preservation, technical accuracy, and reliability.
+This repository contains the server-side components required to support client authentication, persistent player data storage, and core gameplay interactions.
 
-Features
+---
 
-Custom backend compatible with the Pocket Mortys client
+## Features
 
-User registration and authentication handling
+- Custom backend compatible with the Pocket Mortys client
+- User registration and authentication
+- Persistent player data storage
+- Session and room management
+- Battle and world routing
+- Real-time event streaming (Server-Sent Events)
+- Modular API structure for future expansion
 
-Persistent player data storage
+---
 
-Session and room management
+## Requirements
 
-Battle and world routing
+### Server
 
-Real-time event streaming (Server-Sent Events)
+- PHP 8.x
+- MySQL or MariaDB
+- Apache or Nginx
+---
 
-Modular API structure for future expansion
+## Project Status
 
-#Download APK
-👉 https://github.com/ConspiracyRick/Pocket-Mortys-Public-Server/releases
+**Status:** Active Development
 
-
-Requirements
-Server
-
-PHP 8.x
-
-MySQL or MariaDB
-
-Apache or Nginx
-
-Python 3.x (optional, for proxy and routing tools)
-
-Project Status
-
-Development Status: Active
-
-This project is under continuous development.
-Breaking changes may occur as APIs and data models are refined.
+This project is under continuous development. Breaking changes may occur as APIs and data models evolve.
 
 Early adopters should expect:
+- Incomplete features
+- Occasional data resets
+- Rapid iteration cycles
 
-Incomplete features
+---
 
-Occasional data resets
+## Legal Disclaimer
 
-Rapid iteration cycles
+This project is **unofficial** and is **not affiliated with or endorsed by** Adult Swim, Turner Broadcasting, or the original Pocket Mortys developers.
 
-Legal Disclaimer
-
-This project is unofficial and is not affiliated with or endorsed by Adult Swim, Turner Broadcasting, or the original Pocket Mortys developers.
-
-All trademarks, service marks, and copyrighted assets belong to their respective owners.
-This repository does not distribute proprietary game assets.
+All trademarks, service marks, and copyrighted assets belong to their respective owners. This repository does not distribute proprietary game assets.
 
 This project is intended for educational, research, and preservation purposes.
 
-Contributing
+---
 
-Contributions are welcome and encouraged.
+## Contributing
 
-You may contribute by:
+Contributions are welcome.
 
-Submitting bug reports
+- Submit bug reports
+- Improve server stability and performance
+- Enhance documentation
+- Assist with protocol analysis and reverse engineering
 
-Improving server performance and stability
+Please open an issue or submit a pull request.
 
-Enhancing documentation
+---
 
-Assisting with protocol analysis and reverse engineering
+## Support
 
-Please open an issue or submit a pull request for review.
-
-Support & Communication
-
-Use GitHub Issues for bug reports and feature requests
-
-Additional communication channels may be added in the future
+Use GitHub Issues for bug reports and feature requests.
