@@ -14,15 +14,16 @@
   <img src="https://img.shields.io/badge/license-unofficial-lightgrey?style=flat-square" />
 </p>
 
----
-
 ## Overview
 
 An independent, community-maintained server implementation for **Pocket Mortys**, designed to preserve online functionality and enable continued gameplay through a custom backend infrastructure.
 
 This repository contains the server-side components required to support client authentication, persistent player data storage, and core gameplay interactions.
 
----
+Early adopters should expect:
+- Incomplete features
+- Occasional data resets
+- Rapid iteration cycles
 
 ## Features
 
@@ -34,29 +35,10 @@ This repository contains the server-side components required to support client a
 - Real-time event streaming (Server-Sent Events)
 - Modular API structure for future expansion
 
----
-
 ## Requirements
-
-### Server
-
 - PHP 8.x
 - MySQL or MariaDB
 - Apache or Nginx
----
-
-## Project Status
-
-**Status:** Active Development
-
-This project is under continuous development. Breaking changes may occur as APIs and data models evolve.
-
-Early adopters should expect:
-- Incomplete features
-- Occasional data resets
-- Rapid iteration cycles
-
----
 
 ## Legal Disclaimer
 
@@ -65,8 +47,6 @@ This project is **unofficial** and is **not affiliated with or endorsed by** Adu
 All trademarks, service marks, and copyrighted assets belong to their respective owners. This repository does not distribute proprietary game assets.
 
 This project is intended for educational, research, and preservation purposes.
-
----
 
 ## Contributing
 
@@ -78,8 +58,6 @@ Contributions are welcome.
 - Assist with protocol analysis and reverse engineering
 
 Please open an issue or submit a pull request.
-
----
 
 ## Support
 
